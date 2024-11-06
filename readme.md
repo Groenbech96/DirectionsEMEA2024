@@ -36,13 +36,25 @@ On the EDocument service the action "Open Integration Setup". On the setup page,
 
 ## Implement Send Async with API.
 Then post sales invoice for customer with "EDocuments" Doc Sending profile. You need to change this for the customer you are sending to. 
-Go to the E-Document and check the logs. If you have GetResposne status, then you completed sending async. Check the communication logs for the first flag.
+Go to the E-Document and check the logs. If you have GetResposne status, then you completed sending async. Check the communication logs for the first flag. 
+
+You need to communicate to the service endpoint by sending a http request.
+Use the IntegrationHelpers.Codeunit.al use the PrepareRequestMessage to make it easier, and use HttpClient to send it.
+
+You also need to use WriteBlobToRequestMessage to send the XML to the service.
 
 ## Implement GetResponse. 
 Then for a edocument with PendingResponse status, run Get Response job queue manually. If the e-document is not Sent status, then you completed sending and get response. Check the communication logs for the second flag.
 
+Similar to Send, you need to communicate to the service endpoint by sending a http request.
+Use the IntegrationHelpers.Codeunit.al use the PrepareRequestMessage to make it easier, and use HttpClient to send it.
+
 ## Implement Approve
 On Sent EDocument click approve. The implementation should return true to mark edocument approved. Check the communication logs for the third flag.
+
+Similar to Send, you need to communicate to the service endpoint by sending a http request.
+Use the IntegrationHelpers.Codeunit.al use the PrepareRequestMessage to make it easier, and use HttpClient to send it.
+
 
 ## Implement Receive. 
 On the EDoc service page, you can click receive, or use auto import. The service will get one of the documents you sent to it. 
