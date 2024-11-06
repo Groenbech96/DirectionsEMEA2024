@@ -35,16 +35,17 @@ Example:
 On the EDocument service the action "Open Integration Setup". On the setup page, set the field API Key to "secret". Then set the service name to your team name. If you use the functions in the IntegrationHelpers.Codeunit.al, the fields from the demo service will be added as headers automatically.
 
 ## Implement Send Async with API.
-Then post sales invoice for customer with EDoc Doc Sending profile. 
+Then post sales invoice for customer with "EDocuments" Doc Sending profile. You need to change this for the customer you are sending to. 
+Go to the E-Document and check the logs. If you have GetResposne status, then you completed sending async. Check the communication logs for the first flag.
 
 ## Implement GetResponse. 
-Then for a edocument with PendingResponse status, run Get Response job queue.
+Then for a edocument with PendingResponse status, run Get Response job queue manually. If the e-document is not Sent status, then you completed sending and get response. Check the communication logs for the second flag.
 
 ## Implement Approve
-On Sent EDocument click approve.
+On Sent EDocument click approve. The implementation should return true to mark edocument approved. Check the communication logs for the third flag.
 
 ## Implement Receive. 
-On the EDoc service page, you can click receive, or use auto import 
+On the EDoc service page, you can click receive, or use auto import. The service will get one of the documents you sent to it. 
 
 
 # Capture the flag - Win a Microsoft t-shirt and some Merch 
