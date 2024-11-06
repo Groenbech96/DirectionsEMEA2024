@@ -94,7 +94,7 @@ Response:
 - 401 Unauthorized: If the Service header is missing.
 
 
-## Get Response
+## Get Response from service
  
 GET /demo-api/getresponse
  
@@ -116,6 +116,22 @@ Response:
 - 401 Unauthorized: If the Bearer token is missing or invalid.
 - 401 Unauthorized: If the Service header is missing.
 
+## Approval of sent edocument
+
+GET /demo-api/approve
+ 
+Get if edoucment is approved
+
+Headers:
+
+Authorization: Bearer <token>
+
+Service: <service_name>
+
+Response:
+- 200 OK: 
+
+
 ## Receive File
 
 GET /demo-api/receive
@@ -132,33 +148,4 @@ Response:
 - 500 Internal Server Error: Returns {"message": "Error reading file", "error": "<error_message>"} if there is an error reading the file.
 - 401 Unauthorized: If the Service header is missing.
 
-## Approval
 
-GET /demo-api/approve
- 
-Get if edoucment is approved
-
-Headers:
-
-Authorization: Bearer <token>
-
-Service: <service_name>
-
-Response:
-- 200 OK: 
-
-
-## CustomAction
-
-GET /demo-api/customaction
- 
-CustomAction endpoint
-
-Headers:
-
-Authorization: Bearer <token>
-
-Service: <service_name>
-
-Response:
-- 200 OK: 
