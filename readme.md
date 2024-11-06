@@ -29,6 +29,8 @@ Example:
 #### Authorization: Bearer secret
 #### Service: MyTeamName
 
+It is also a good idea to read the Interface documentation. You can control click the interfaces that the codeunit implements to read more.
+
 # Tasks to complete
 
 ## Implement OpenServiceIntegrationSetupPage to open demo setup page
