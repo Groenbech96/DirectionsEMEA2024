@@ -31,16 +31,20 @@ Example:
 
 # Tasks to complete
 
+## Implement OpenServiceIntegrationSetupPage to open demo setup page
+On the EDocument service the action "Open Integration Setup". On the setup page, set the field API Key to "secret". Then set the service name to your team name. If you use the functions in the IntegrationHelpers.Codeunit.al, the fields from the demo service will be added as headers automatically.
+
 ## Implement Send Async with API.
 Then post sales invoice for customer with EDoc Doc Sending profile. 
+
 ## Implement GetResponse. 
 Then for a edocument with PendingResponse status, run Get Response job queue.
 
-## Implement Receive. 
-On the EDoc service page, you can click receive, or use auto import 
-
 ## Implement Approve
 On Sent EDocument click approve.
+
+## Implement Receive. 
+On the EDoc service page, you can click receive, or use auto import 
 
 
 # Capture the flag - Win a Microsoft t-shirt and some Merch 
